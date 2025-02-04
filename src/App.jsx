@@ -65,8 +65,9 @@ function App() {
         className={`color-box ${animationClass}`}
         style={{ backgroundColor: targetColor }}
         onAnimationEnd={() => setAnimationClass('')}
+        data-testid="colorBox" 
       ></div>
-      <p className="game-instructions">
+      <p className="game-instructions" data-testid="gameInstructions">
         Guess the correct color that matches the box above!
       </p>
       <div className="color-options">
@@ -77,14 +78,15 @@ function App() {
             style={{ backgroundColor: color }}
             onClick={() => handleGuess(color)}
             disabled={hasGuessed}
+            data-testid="colorOption" 
           ></button>
         ))}
       </div>
-      <p className="game-status">{gameStatus}</p>
-      <p className="score">
+      <p className="game-status" data-testid="gameStatus">{gameStatus}</p> 
+      <p className="score" data-testid="score"> 
         Score: <span>{score}</span>
       </p>
-      <button className="new-game-btn" onClick={resetGame}>
+      <button className="new-game-btn" onClick={resetGame} data-testid="newGameButton">
         New Game
       </button>
     </div>
